@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using IdentityModel.Client;
 using Xunit;
-using Xunit.Abstractions;
+
 namespace UserTest
 {
     public class UserClientTest
     {
-
-
         [Fact]
         public async Task ClientApiTest()
         {
@@ -33,6 +28,7 @@ namespace UserTest
             var disco = await DiscoveryClient.GetAsync("http://localhost:8000");
             var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.Client", "secret");
             var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("qwerty", "a123", "UserApi");
+
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);//add bearer with access_token
             var response = await client.GetAsync("http://localhost:5001/api/Values");//call API with access_token
