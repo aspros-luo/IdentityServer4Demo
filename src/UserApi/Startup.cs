@@ -37,9 +37,23 @@ namespace UserApi
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
+          
+
+            #region 跨域
+            services.AddCors(options =>
+            {
+                // this defines a CORS policy called "default"
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins("http://localhost:5003")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+            #endregion
             services.AddMvcCore()
-                .AddAuthorization()
-                .AddJsonFormatters();
+              .AddAuthorization()
+              .AddJsonFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
@@ -54,6 +68,7 @@ namespace UserApi
                 AllowedScopes = { "UserApi" },
                 RequireHttpsMetadata = false
             });
+            app.UseCors("default");
 
             app.UseMvc();
         }

@@ -20,6 +20,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Identity4Demo", "src\Identi
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MvcClient", "src\MvcClient\MvcClient.xproj", "{4CFB4883-9929-4814-BE22-2E19476CE4A3}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "JavascriptClient", "src\JavascriptClient\JavascriptClient.xproj", "{0CF70B73-A5EB-4862-ACF5-2F085728941F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{4CFB4883-9929-4814-BE22-2E19476CE4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CFB4883-9929-4814-BE22-2E19476CE4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CFB4883-9929-4814-BE22-2E19476CE4A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CF70B73-A5EB-4862-ACF5-2F085728941F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF70B73-A5EB-4862-ACF5-2F085728941F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF70B73-A5EB-4862-ACF5-2F085728941F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF70B73-A5EB-4862-ACF5-2F085728941F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +57,6 @@ Global
 		{938D1FEA-DFCB-43A0-89AC-3FB317CDD59C} = {860E52E4-0A5C-410A-9BA2-618B41A99F5E}
 		{6DD039A6-028E-4F3C-BECD-E2CEF4CB66C7} = {D08586E9-9E25-4DEE-96EF-FF666306CF9F}
 		{4CFB4883-9929-4814-BE22-2E19476CE4A3} = {D08586E9-9E25-4DEE-96EF-FF666306CF9F}
+		{0CF70B73-A5EB-4862-ACF5-2F085728941F} = {D08586E9-9E25-4DEE-96EF-FF666306CF9F}
 	EndGlobalSection
 EndGlobal

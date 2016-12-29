@@ -11,7 +11,7 @@ namespace UserTest
         public async Task ClientApiTest()
         {
             //get access_token
-            var disco = await DiscoveryClient.GetAsync("http://localhost:8000");
+            var disco = await DiscoveryClient.GetAsync("http://localhost:8000");//授权中心
             var tokenClient = new TokenClient(disco.TokenEndpoint, "Client", "secret");
             var tokenResponse = await tokenClient.RequestClientCredentialsAsync("UserApi");
 
