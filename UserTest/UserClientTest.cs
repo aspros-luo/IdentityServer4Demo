@@ -11,7 +11,7 @@ namespace UserTest
         public async Task ClientApiTest()
         {
             //get access_token
-            var disco = await DiscoveryClient.GetAsync("http://localhost:8000");//授权中心
+            var disco = await DiscoveryClient.GetAsync("http://localhost:8001");
             var tokenClient = new TokenClient(disco.TokenEndpoint, "Client", "secret");
             var tokenResponse = await tokenClient.RequestClientCredentialsAsync("UserApi");
 
@@ -25,7 +25,7 @@ namespace UserTest
         [Fact]
         public async Task PasswordApiTests()
         {
-            var disco = await DiscoveryClient.GetAsync("http://localhost:8000");
+            var disco = await DiscoveryClient.GetAsync("http://localhost:8001");
             var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.Client", "secret");
             var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("qwerty", "a123", "UserApi");
 
@@ -35,6 +35,5 @@ namespace UserTest
             var apiResult = response.Content.ReadAsStringAsync().Result;
             Assert.NotEmpty(apiResult);
         }
-
     }
 }

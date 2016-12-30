@@ -36,9 +36,6 @@ namespace UserApi
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-
-          
-
             #region 跨域
             services.AddCors(options =>
             {
@@ -61,13 +58,14 @@ namespace UserApi
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            //配置identityServer授权
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
-                Authority = "http://localhost:8000",
+                Authority = "http://localhost:8001",
                 AllowedScopes = { "UserApi" },
                 RequireHttpsMetadata = false
             });
+            //跨域访问
             app.UseCors("default");
 
             app.UseMvc();

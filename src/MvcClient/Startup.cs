@@ -61,7 +61,7 @@ namespace MvcClient
 
                 ResponseType = "code id_token",
                 Scope = { "UserApi", "offline_access" },//添加权限请求项
-
+                
                 GetClaimsFromUserInfoEndpoint = true,
                 SaveTokens = true
             });

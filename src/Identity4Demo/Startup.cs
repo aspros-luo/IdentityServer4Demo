@@ -38,7 +38,6 @@ namespace Identity4Demo
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddIdentityServer()
                 .AddTemporarySigningCredential()
-            
                 .AddInMemoryApiResources(Configs.GeyApiResources())
                 .AddInMemoryClients(Configs.GetClients())
                 .AddInMemoryIdentityResources(Configs.GetyIdentityResources())
