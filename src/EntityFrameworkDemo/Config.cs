@@ -20,7 +20,8 @@ namespace EntityFrameworkDemo
             return new List<ApiResource>
             {
                 new ApiResource("UserApi","用户API"),
-                new ApiResource("api1","测试api")
+                new ApiResource("api1","测试api"),
+                new ApiResource("ap2","测试api")
             };
         }
         public static IEnumerable<Client> GetClients()

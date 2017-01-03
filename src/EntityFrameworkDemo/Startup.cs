@@ -101,14 +101,14 @@ namespace EntityFrameworkDemo
                 {
                     context.Clients.Add(client.ToEntity());
                 }
-                context.SaveChanges();
+                //context.SaveChanges();
 
 
-                foreach (var identity in Config.GetyIdentityResources().Where(identity => context.IdentityResources.Any(i => i.Name == identity.Name)))
+                foreach (var identity in Config.GetyIdentityResources().Where(identity => !context.IdentityResources.Any(i => i.Name == identity.Name)))
                 {
                     context.IdentityResources.Add(identity.ToEntity());
                 }
-                context.SaveChanges();
+                //context.SaveChanges();
 
                 foreach (var api in Config.GeyApiResources().Where(api => !context.ApiResources.Any(a => a.Name == api.Name)))
                 {
