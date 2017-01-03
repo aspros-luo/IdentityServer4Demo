@@ -53,7 +53,7 @@ namespace MvcClient
                 AuthenticationScheme = "oidc",
                 SignInScheme = "Cookies",
 
-                Authority = "http://localhost:8000",
+                Authority = "http://localhost:8001",
                 RequireHttpsMetadata = false,
 
                 ClientId = "MVC",
