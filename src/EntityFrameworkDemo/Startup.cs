@@ -88,6 +88,7 @@ namespace EntityFrameworkDemo
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
         private void InitializeDatabase(IApplicationBuilder app)
         {
             using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
@@ -97,23 +98,35 @@ namespace EntityFrameworkDemo
                 var context = scope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
                 context.Database.Migrate();
 
-                foreach (var client in Config.GetClients().Where(client => !context.Clients.Any(c => c.ClientId == client.ClientId)))
+                if (!context.Clients.Any())
                 {
-                    context.Clients.Add(client.ToEntity());
+                    foreach (var client in Config.GetClients().Where(client => !context.Clients.Any(c => c.ClientId == client.ClientId)))
+                    {
+                        context.Clients.Add(client.ToEntity());
+                    }
                 }
+
                 //context.SaveChanges();
 
-
-                foreach (var identity in Config.GetyIdentityResources().Where(identity => !context.IdentityResources.Any(i => i.Name == identity.Name)))
+                if (!context.IdentityResources.Any())
                 {
-                    context.IdentityResources.Add(identity.ToEntity());
+                    foreach (
+                        var identity in
+                            Config.GetyIdentityResources()
+                                .Where(identity => !context.IdentityResources.Any(i => i.Name == identity.Name)))
+                    {
+                        context.IdentityResources.Add(identity.ToEntity());
+                    }
                 }
                 //context.SaveChanges();
-
-                foreach (var api in Config.GeyApiResources().Where(api => !context.ApiResources.Any(a => a.Name == api.Name)))
+                if (!context.ApiResources.Any())
                 {
-                    context.ApiResources.Add(api.ToEntity());
+                    foreach (var api in Config.GeyApiResources().Where(api => !context.ApiResources.Any(a => a.Name == api.Name)))
+                    {
+                        context.ApiResources.Add(api.ToEntity());
+                    }
                 }
+
                 context.SaveChanges();
             }
         }
