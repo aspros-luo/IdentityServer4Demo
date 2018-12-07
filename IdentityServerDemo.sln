@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D08586E9-9E25-4DEE-96EF-FF666306CF9F}"
 EndProject
@@ -10,19 +10,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UserApi", "src\UserApi\UserApi.xproj", "{465B7B82-4C69-4219-BD60-B1607C2BA4BD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{860E52E4-0A5C-410A-9BA2-618B41A99F5E}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UserTest", "UserTest\UserTest.xproj", "{938D1FEA-DFCB-43A0-89AC-3FB317CDD59C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserApi", "src\UserApi\UserApi.csproj", "{465B7B82-4C69-4219-BD60-B1607C2BA4BD}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Identity4Demo", "src\Identity4Demo\Identity4Demo.xproj", "{6DD039A6-028E-4F3C-BECD-E2CEF4CB66C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserTest", "UserTest\UserTest.csproj", "{938D1FEA-DFCB-43A0-89AC-3FB317CDD59C}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MvcClient", "src\MvcClient\MvcClient.xproj", "{4CFB4883-9929-4814-BE22-2E19476CE4A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity4Demo", "src\Identity4Demo\Identity4Demo.csproj", "{6DD039A6-028E-4F3C-BECD-E2CEF4CB66C7}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "JavascriptClient", "src\JavascriptClient\JavascriptClient.xproj", "{0CF70B73-A5EB-4862-ACF5-2F085728941F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClient", "src\MvcClient\MvcClient.csproj", "{4CFB4883-9929-4814-BE22-2E19476CE4A3}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "EntityFrameworkDemo", "src\EntityFrameworkDemo\EntityFrameworkDemo.xproj", "{6D575940-4D47-49C7-BDAA-109549C22888}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavascriptClient", "src\JavascriptClient\JavascriptClient.csproj", "{0CF70B73-A5EB-4862-ACF5-2F085728941F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkDemo", "src\EntityFrameworkDemo\EntityFrameworkDemo.csproj", "{6D575940-4D47-49C7-BDAA-109549C22888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Id4AuthorityCenter", "Id4AuthorityCenter\Id4AuthorityCenter.csproj", "{25E11107-01CE-459E-AF35-8BDEB3497E50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,10 @@ Global
 		{6D575940-4D47-49C7-BDAA-109549C22888}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D575940-4D47-49C7-BDAA-109549C22888}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D575940-4D47-49C7-BDAA-109549C22888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E11107-01CE-459E-AF35-8BDEB3497E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E11107-01CE-459E-AF35-8BDEB3497E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E11107-01CE-459E-AF35-8BDEB3497E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E11107-01CE-459E-AF35-8BDEB3497E50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +71,8 @@ Global
 		{4CFB4883-9929-4814-BE22-2E19476CE4A3} = {D08586E9-9E25-4DEE-96EF-FF666306CF9F}
 		{0CF70B73-A5EB-4862-ACF5-2F085728941F} = {D08586E9-9E25-4DEE-96EF-FF666306CF9F}
 		{6D575940-4D47-49C7-BDAA-109549C22888} = {D08586E9-9E25-4DEE-96EF-FF666306CF9F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BDA3293-77B1-4225-8433-C99702D9AF6C}
 	EndGlobalSection
 EndGlobal
